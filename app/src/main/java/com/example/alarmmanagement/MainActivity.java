@@ -91,14 +91,13 @@ public class MainActivity extends AppCompatActivity {
 
             alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
-                Intent intent = new Intent(this,AlarmReceiver.class);
+            Intent intent = new Intent(this,AlarmReceiver.class);
 
-                pendingIntent = PendingIntent.getBroadcast(this,0,intent,PendingIntent.FLAG_IMMUTABLE);
+            pendingIntent = PendingIntent.getBroadcast(this,0,intent,PendingIntent.FLAG_IMMUTABLE);
 
-                alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),
-                        AlarmManager.INTERVAL_DAY,pendingIntent);
+            alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
 
-                Toast.makeText(this, "Alarm set Successfully", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Alarm set Successfully", Toast.LENGTH_SHORT).show();
 
 
 
