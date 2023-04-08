@@ -17,7 +17,7 @@ public class    AlarmReceiver extends BroadcastReceiver {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(context,0,i,PendingIntent.FLAG_IMMUTABLE);
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(context,"foxandroid")
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context,"georgeid")
                 .setSmallIcon(R.drawable.ic_launcher_background)
                 .setContentTitle("George Alarm Manager")
                 .setContentText("This is a notification")
